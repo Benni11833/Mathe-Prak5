@@ -13,7 +13,7 @@ int main() {
 	CZufall z1;
 	print_haeufigkeiten(z1.test(3, 7, 10000));
 
-	std::cout << "Haeufigkeiten mit test_falsch:\n\n";
+	std::cout << "\n\nHaeufigkeiten mit test_falsch:\n";
 	print_haeufigkeiten(z1.test_falsch(3, 7, 10000));
 
 	system("pause");
