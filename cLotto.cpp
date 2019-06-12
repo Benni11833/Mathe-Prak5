@@ -42,9 +42,6 @@ std::vector<int> CLotto::ziehung6_aus_49()
 {
 	std::vector<int> ziehung;
 	int tmp = -1;
-	bool flag = false;
-	CZufall z1;
-	z1.initialisiere(time(NULL));
 	ziehung.resize(6, -1);
 	for (int i = 0; i < 6; i++) {
 		//z1.initialisiere(time(NULL));
@@ -77,8 +74,13 @@ int CLotto::lotto_ziehung() {
 }
 
 int CLotto::lotto_ziehung2() {
-	int count = lotto_ziehung();
-	count += lotto_ziehung();
+	std::vector<int> ziehungen1 = ziehung6_aus_49();
+	std::vector<int> ziehungen2 = ziehung6_aus_49();
+	int count = 0;
+	for (int i = 0; i < ziehungen1.size(); i++) {
+		if (std::find(ziehungen2.begin(), ziehungen2.end(), ziehungen1[i]) != ziehungen2.end())	//wenn ziehungen[i] im tippzettel vorkommt
+			++count;
+	}
 	return count;
 }
 
