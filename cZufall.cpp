@@ -1,7 +1,7 @@
 #include "cZufall.h"
 
 int CZufall::wert(int a, int b) {
-	return rand() % b + a;
+	return rand() % (b-a) + a;
 }
 
 void CZufall::initialisiere(int n) {
@@ -10,7 +10,8 @@ void CZufall::initialisiere(int n) {
 
 std::vector<int> CZufall::test(int a, int b, int N) {
 	std::vector<int> haeufigkeit_vec;
-	haeufigkeit_vec.resize(N, 0);
+	haeufigkeit_vec.resize(b, 0);
+	initialisiere(time(NULL));
 	int tmp = 0;
 	for (int i = 0; i < N; i++) {
 		tmp = wert(a, b);
@@ -22,7 +23,7 @@ std::vector<int> CZufall::test(int a, int b, int N) {
 
 std::vector<int> CZufall::test_falsch(int a, int b, int N) {
 	std::vector<int> haeufigkeit_vec;
-	haeufigkeit_vec.resize(N, 0);
+	haeufigkeit_vec.resize(b, 0);
 	int tmp = 0;
 	for (int i = 0; i < N; i++) {
 		initialisiere(time(NULL));
