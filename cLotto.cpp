@@ -58,7 +58,7 @@ int CLotto::lotto_ziehung() {
 	if (tippzettel.size() == 0)
 		setTippzettel(true);
 	std::vector<int> ziehungen = ziehung6_aus_49();
-	std::vector<int> same;	same.resize(0);
+	std::vector<int> same;	same.clear();
 	for (int i = 0; i < ziehungen.size(); i++) {
 		if (std::find(tippzettel.begin(), tippzettel.end(), ziehungen[i]) != tippzettel.end())	//wenn ziehungen[i] im tippzettel vorkommt
 			same.push_back(ziehungen[i]);

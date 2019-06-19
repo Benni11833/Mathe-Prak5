@@ -15,7 +15,7 @@ int main() {
 	std::cout << "\n\nHaeufigkeiten mit test_falsch:\n";
 	print_haeufigkeiten(z1.test_falsch(3, 7, 10000));*/
 
-	CLotto l1{ -10 };
+	CLotto l1{ 0 };
 
 	//Monte-Carlo:
 	//a)

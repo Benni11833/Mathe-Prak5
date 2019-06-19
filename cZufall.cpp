@@ -1,7 +1,7 @@
 #include "cZufall.h"
 
 int CZufall::wert(int a, int b) {
-	return rand() % (b-a) + a;
+	return rand() % (b+1-a) + a;
 }
 
 void CZufall::initialisiere(int n) {
